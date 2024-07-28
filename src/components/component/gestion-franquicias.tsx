@@ -107,9 +107,10 @@ export function GestionFranquicias(): JSX.Element {
             </motion.div>
           </div>
         </section>
+
         <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <motion.div 
-            className="container grid items-center justify-center gap-4 px-4 text-center md:px-6"
+            className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6"
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -120,88 +121,64 @@ export function GestionFranquicias(): JSX.Element {
                 Elige el plan que mejor se adapte a las necesidades de tu franquicia.
               </p>
             </div>
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-2 mx-auto">
               <motion.div variants={scaleUp} whileHover={{ scale: 1.05 }}>
                 <Card className="bg-background rounded-lg shadow-md hover:shadow-[0_0_20px_0_rgba(153,0,255,0.5)]">
                   <CardHeader>
-                    <CardTitle>Plan Avanzado</CardTitle>
-                    <CardDescription>Ideal para franquicias consolidadas</CardDescription>
+                    <CardTitle>Plan de Desarrollo - $700 USD/mes</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="flex items-baseline justify-center gap-2 text-4xl font-bold">
-                      $99
-                      <span className="text-sm font-normal text-muted-foreground">/ mes</span>
-                    </div>
                     <ul className="mt-8 space-y-4 text-muted-foreground">
                       <li className="flex items-center gap-2">
-                        <CheckIcon className="h-5 w-5 text-primary" />
-                        Todo lo del Plan Básico
+                        Herramientas para crear el proyecto de franquicia
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckIcon className="h-5 w-5 text-primary" />
-                        Integración con Stripe
+                        Módulos para definir modelo de negocio, estrategia, finanzas, etc.
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckIcon className="h-5 w-5 text-primary" />
-                        Automatización de Procesos
+                        Generación de documentación legal y operativa
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckIcon className="h-5 w-5 text-primary" />
-                        Asistente de IA
+                        Acceso a plantillas y mejores prácticas
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckIcon className="h-5 w-5 text-primary" />
-                        Prioridad en Soporte
+                        Asesoría de expertos en franquicias
                       </li>
                     </ul>
                   </CardContent>
-                  <CardFooter>
-                    <Button className="w-full" onClick={() => (window.location.href = "/pricing")}>
-                      Obtener Plan Avanzado
-                    </Button>
-                  </CardFooter>
                 </Card>
               </motion.div>
+
               <motion.div variants={scaleUp} whileHover={{ scale: 1.05 }}>
                 <Card className="bg-background rounded-lg shadow-md hover:shadow-[0_0_20px_0_rgba(153,0,255,0.5)]">
                   <CardHeader>
-                    <CardTitle>Plan Empresarial</CardTitle>
-                    <CardDescription>Ideal para franquicias de gran escala</CardDescription>
+                    <CardTitle>Plan de Comercialización - $400 USD/mes</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="flex items-baseline justify-center gap-2 text-4xl font-bold">
-                      $299
-                      <span className="text-sm font-normal text-muted-foreground">/ mes</span>
-                    </div>
                     <ul className="mt-8 space-y-4 text-muted-foreground">
                       <li className="flex items-center gap-2">
-                        <CheckIcon className="h-5 w-5 text-primary" />
-                        Todo lo del Plan Avanzado
+                        Portal para atraer y gestionar franquiciados potenciales
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckIcon className="h-5 w-5 text-primary" />
-                        Asistente de IA Avanzado
+                        Herramientas de marketing digital para promocionar la franquicia
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckIcon className="h-5 w-5 text-primary" />
-                        Análisis Predictivo
+                        CRM para seguimiento de leads
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckIcon className="h-5 w-5 text-primary" />
-                        Prioridad en Soporte
+                        Analítica y reportes de expansión
+                      </li>
+                      <li className="flex items-center gap-2">
+                        Acceso a marketplace de franquicias
                       </li>
                     </ul>
                   </CardContent>
-                  <CardFooter>
-                    <Button className="w-full" onClick={() => (window.location.href = "/pricing")}>
-                      Obtener Plan Empresarial
-                    </Button>
-                  </CardFooter>
                 </Card>
               </motion.div>
             </div>
           </motion.div>
         </section>
+
         <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <motion.div 
             className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10"
@@ -211,7 +188,7 @@ export function GestionFranquicias(): JSX.Element {
           >
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Características clave de Franmaker
+                Características principales
               </h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Franmaker te ofrece herramientas avanzadas para desarrollar y comercializar tu franquicia de manera eficiente.
@@ -224,10 +201,7 @@ export function GestionFranquicias(): JSX.Element {
                     <CpuIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold">Desarrollo de Franquicias</h3>
-                    <p className="text-muted-foreground">
-                      Crea y personaliza tu modelo de franquicia con herramientas de IA.
-                    </p>
+                    <h3 className="text-lg">Interfaz intuitiva basada en Franmaker de 11 módulos</h3>
                   </div>
                 </motion.div>
                 <motion.div variants={scaleUp} whileHover={{ scale: 1.05 }} className="flex flex-col items-start gap-4 bg-background rounded-lg p-6 shadow-md hover:bg-muted/50 transition-colors">
@@ -235,8 +209,7 @@ export function GestionFranquicias(): JSX.Element {
                     <BriefcaseIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold">Comercialización</h3>
-                    <p className="text-muted-foreground">Atrae y gestiona a tus franquiciados de manera eficiente.</p>
+                    <h3 className="text-lg">Guías paso a paso para desarrollar cada aspecto de la franquicia</h3>
                   </div>
                 </motion.div>
                 <motion.div variants={scaleUp} whileHover={{ scale: 1.05 }} className="flex flex-col items-start gap-4 bg-background rounded-lg p-6 shadow-md hover:bg-muted/50 transition-colors">
@@ -244,8 +217,7 @@ export function GestionFranquicias(): JSX.Element {
                     <ClipboardIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold">Gestión de Franquicias</h3>
-                    <p className="text-muted-foreground">Supervisa y controla el desempeño de tu red de franquicias.</p>
+                    <h3 className="text-lg">Generación automática de documentos clave (contratos, manuales, etc.)</h3>
                   </div>
                 </motion.div>
                 <motion.div variants={scaleUp} whileHover={{ scale: 1.05 }} className="flex flex-col items-start gap-4 bg-background rounded-lg p-6 shadow-md hover:bg-muted/50 transition-colors">
@@ -253,10 +225,7 @@ export function GestionFranquicias(): JSX.Element {
                     <PieChartIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold">Análisis y Reportes</h3>
-                    <p className="text-muted-foreground">
-                      Obtén insights valiosos sobre el desempeño de tu franquicia.
-                    </p>
+                    <h3 className="text-lg">Integración con herramientas de marketing y ventas</h3>
                   </div>
                 </motion.div>
                 <motion.div variants={scaleUp} whileHover={{ scale: 1.05 }} className="flex flex-col items-start gap-4 bg-background rounded-lg p-6 shadow-md hover:bg-muted/50 transition-colors">
@@ -264,8 +233,7 @@ export function GestionFranquicias(): JSX.Element {
                     <ShieldIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold">Seguridad y Cumplimiento</h3>
-                    <p className="text-muted-foreground">Mantén tu información segura y cumple con las regulaciones.</p>
+                    <h3 className="text-lg">Tableros de control para monitorear el crecimiento de la red</h3>
                   </div>
                 </motion.div>
                 <motion.div variants={scaleUp} whileHover={{ scale: 1.05 }} className="flex flex-col items-start gap-4 bg-background rounded-lg p-6 shadow-md hover:bg-muted/50 transition-colors">
@@ -273,16 +241,14 @@ export function GestionFranquicias(): JSX.Element {
                     <UsersIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold">Soporte y Capacitación</h3>
-                    <p className="text-muted-foreground">
-                      Brindamos asistencia y capacitación continua a tus franquiciados.
-                    </p>
+                    <h3 className="text-lg">Comunidad y recursos para franquiciadores</h3>
                   </div>
                 </motion.div>
               </div>
             </div>
           </motion.div>
         </section>
+
         <section className="w-full py-12 md:py-24 lg:py-32 bg-background flex justify-center">
           <motion.div 
             className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10"
@@ -292,10 +258,10 @@ export function GestionFranquicias(): JSX.Element {
           >
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Métricas de Mejora con Franmaker
+                Propuesta de interfaz
               </h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Descubre cómo Franmaker puede mejorar el desempeño de tu franquicia.
+                La interfaz proporciona una visión detallada de métricas clave como los leads de franquiciados potenciales, el rendimiento de las franquicias y las tendencias de mercado. Herramientas analíticas avanzadas permiten tomar decisiones informadas y estratégicas.
               </p>
             </div>
             <div className="w-full max-w-5xl">

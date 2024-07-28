@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 
-export default function Login() {
+export default function Register() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,7 +22,7 @@ export default function Login() {
     setError(null);
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signUp({
         email,
         password,
       });
@@ -30,51 +30,47 @@ export default function Login() {
       if (error) throw error;
 
       if (data.user) {
-        router.push('/admin'); // Redirige a la página de administrador si el login es exitoso
+        router.push('/login');
       }
     } catch (error: any) {
-      console.error('Error al iniciar sesión:', error);
-      setError(error.message || 'Error al iniciar sesión. Por favor, inténtelo de nuevo.');
+      console.error('Error al crear la cuenta:', error);
+      setError(error.message || 'Error al crear la cuenta. Por favor, inténtelo de nuevo.');
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleDemoLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    localStorage.setItem('demoLogin', 'true'); // Establece una bandera de sesión de demostración
-    router.push('/admin'); // Redirige a la página de administrador para el demo
-  };
-
   return (
-    <div className="flex justify-center items-center h-screen bg-black">
+    <div className="flex justify-center items-center min-h-screen bg-black">
       <Card className="w-full max-w-md p-6 space-y-6 bg-gray-800 text-white shadow-md rounded-lg">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold">Iniciar sesión</CardTitle>
-          <CardDescription>Ingresa tu correo electrónico y contraseña para acceder a tu cuenta.</CardDescription>
+          <CardTitle className="text-3xl font-bold">Crear cuenta</CardTitle>
+          <CardDescription>Ingrese su información para crear una cuenta.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <form onSubmit={handleSubmit}>
             <div className="space-y-2">
               <Label htmlFor="email">Correo electrónico</Label>
-              <Input 
-                id="email" 
-                type="email" 
-                placeholder="ejemplo@email.com" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
-                className="bg-gray-700 text-white" 
+              <Input
+                id="email"
+                type="email"
+                placeholder="ejemplo@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-gray-700 text-white"
+                required
               />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Contraseña</Label>
-              <Input 
-                id="password" 
-                type="password" 
-                placeholder="********" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                className="bg-gray-700 text-white" 
+              <Input
+                id="password"
+                type="password"
+                placeholder="********"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="bg-gray-700 text-white"
+                required
               />
             </div>
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
@@ -84,18 +80,12 @@ export default function Login() {
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md"
                 disabled={isLoading}
               >
-                {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
-              </Button>
-              <Button 
-                onClick={handleDemoLogin} 
-                className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md"
-              >
-                Iniciar sesión Demo
+                {isLoading ? 'Creando cuenta...' : 'Crear cuenta'}
               </Button>
               <div className="text-center text-sm text-gray-400">
-                ¿No tienes una cuenta?{' '}
-                <Link href="/login/register" className="font-medium text-blue-500 hover:underline">
-                  Crear cuenta
+                ¿Ya tienes una cuenta?{' '}
+                <Link href="/login" className="font-medium text-blue-500 hover:underline">
+                  Iniciar sesión
                 </Link>
               </div>
             </CardFooter>

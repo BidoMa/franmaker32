@@ -4,17 +4,17 @@
 
 @layer base {
   :root {
-    --background: 240 5% 5%; /* Más oscuro y menos saturado */
+    --background: 0 5% 10%; /* Gris oscuro */
     --foreground: 210 20% 98%;
-    --card: 240 5% 5%; /* Manteniendo consistencia con el fondo */
+    --card: 240 5% 10%; /* Manteniendo consistencia con el fondo */
     --card-foreground: 210 20% 98%;
-    --popover: 240 5% 5%;
+    --popover: 240 5% 10%;
     --popover-foreground: 210 20% 98%;
     --primary: 210 20% 98%;
     --primary-foreground: 220.9 39.3% 11%;
-    --secondary: 215 27.9% 16.9%;
+    --secondary: 0 0% 0%; /* Negro para el menú */
     --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
+    --muted: 240 5% 15%;
     --muted-foreground: 217.9 10.6% 64.9%;
     --accent: 215 27.9% 16.9%;
     --accent-foreground: 210 20% 98%;
@@ -31,17 +31,17 @@
   }
 
   .dark {
-    --background: 240 5% 5%;
+    --background: 0 5% 10%;
     --foreground: 210 20% 98%;
-    --card: 240 5% 5%;
+    --card: 240 5% 10%;
     --card-foreground: 210 20% 98%;
-    --popover: 240 5% 5%;
+    --popover: 240 5% 10%;
     --popover-foreground: 210 20% 98%;
     --primary: 210 20% 98%;
     --primary-foreground: 220.9 39.3% 11%;
-    --secondary: 215 27.9% 16.9%;
+    --secondary: 0 0% 0%;
     --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
+    --muted: 240 5% 15%;
     --muted-foreground: 217.9 10.6% 64.9%;
     --accent: 215 27.9% 16.9%;
     --accent-foreground: 210 20% 98%;
