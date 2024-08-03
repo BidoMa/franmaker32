@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .marketplace {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .navbar a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar .actions button {
+    margin-left: 10px;
+  }
+  
+  .content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .filters {
+    width: 250px;
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+  }
+  
+  .filters h2 {
+    margin-top: 0;
+  }
+  
+  .filters .categories {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filters button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .filters button.active {
+    background-color: #1abc9c;
+  }
+  
+  .filters button:hover {
+    background-color: #16a085;
+  }
+  
+  .franchise-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    flex: 1;
+    background-color: #f8f9fa;
+  }
+  
+  .franchise-card {
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 350px; /* Más ancho para hacer las fichas más grandes */
+  }
+  
+  .franchise-card h3 {
+    margin-top: 0;
+  }
+  
+  .franchise-card p {
+    margin: 5px 0;
+  }
+  
+  .franchise-card a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .franchise-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .franchise-card button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .franchise-card button:hover {
+    background-color: #2980b9;
+  }
+  

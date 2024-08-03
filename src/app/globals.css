@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 5% 10%; /* Gris oscuro */
+    --background: 0 0% 0%; /* Negro completo */
     --foreground: 210 20% 98%;
     --card: 240 5% 10%; /* Manteniendo consistencia con el fondo */
     --card-foreground: 210 20% 98%;
@@ -65,4 +65,68 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.imgContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0);
+  transition: box-shadow 0.3s;
+}
+
+.imgContainer:hover {
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.8);
+}
+
+.trusted-brands-container {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 40px 0; /* Increased margin to add more space */
+  padding: 0;
+}
+
+.trusted-brands-header {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #fff; /* Texto en blanco */
+  margin-bottom: 20px; /* Increased margin-bottom for more space */
+}
+
+.trusted-brands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Adjusted gap between logos */
+  padding: 0;
+}
+
+.trusted-brands img {
+  max-height: 30px; /* Reduce the size of the logos */
+  margin: 0 10px; /* Adjusted margin between logos */
+  filter: grayscale(100%); /* Apply grayscale to the logos */
+  transition: filter 0.3s;
+}
+
+.trusted-brands img:hover {
+  filter: grayscale(0); /* Remove grayscale on hover */
+}
+
+.demo-button {
+  display: flex;
+  justify-content: flex-start; /* Align button to the left */
+  margin-top: 30px; /* Increased top margin */
+}
+
+.demo-button button {
+  background-color: #34D399; /* Tailwind Emerald 400 */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.demo-button button:hover {
+  background-color: #059669; /* Tailwind Emerald 600 */
 }
