@@ -10,7 +10,7 @@ interface FilterProps {
   setSelectedCategories: (categories: string[]) => void;
 }
 
-const categories = ['All', 'Food', 'Retail', 'Service', 'Fitness'];
+const categories = ['Todos', 'Gastronomía', 'Retail', 'Servicios', 'Fitness'];
 
 const Filter: React.FC<FilterProps> = ({
   searchTerm,

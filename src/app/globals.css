@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes glowCenter {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(138, 43, 226, 0.5), 0 0 10px rgba(138, 43, 226, 0.4), 0 0 15px rgba(138, 43, 226, 0.3), 0 0 20px rgba(138, 43, 226, 0.2), 0 0 25px rgba(138, 43, 226, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(138, 43, 226, 1), 0 0 20px rgba(138, 43, 226, 0.9), 0 0 30px rgba(138, 43, 226, 0.8), 0 0 40px rgba(138, 43, 226, 0.7), 0 0 50px rgba(138, 43, 226, 0.6);
+  }
+}
+
+.animate-glow-center {
+  animation: glowCenter 2s infinite;
+}
+
 @layer base {
   :root {
     --background: 0 0% 0%; /* Negro completo */
@@ -66,6 +79,36 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Especificar el fondo verde solo para los botones del admin */
+.admin-button {
+  background-color: #34D399; /* Tailwind Emerald 400 */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-button:hover {
+  background-color: #059669; /* Tailwind Emerald 600 */
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: transparent;
+}
+
 .imgContainer {
   position: relative;
   overflow: hidden;
@@ -129,4 +172,16 @@
 
 .demo-button button:hover {
   background-color: #059669; /* Tailwind Emerald 600 */
+}
+@keyframes pulseViolet {
+  0%, 100% {
+    box-shadow: 0 0 15px 2px rgba(138, 43, 226, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px 5px rgba(138, 43, 226, 0.8);
+  }
+}
+
+.animate-pulse-violet {
+  animation: pulseViolet 2s infinite;
 }

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
+import NavBar from '@/components/NavBar'; // Asegúrate de que la ruta sea correcta
 
 export default function Register() {
   const router = useRouter();
@@ -41,57 +42,60 @@ export default function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-black">
-      <Card className="w-full max-w-md p-6 space-y-6 bg-gray-800 text-white shadow-md rounded-lg">
-        <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold">Crear cuenta</CardTitle>
-          <CardDescription>Ingrese su información para crear una cuenta.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <form onSubmit={handleSubmit}>
-            <div className="space-y-2">
-              <Label htmlFor="email">Correo electrónico</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="ejemplo@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-gray-700 text-white"
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Contraseña</Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="********"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="bg-gray-700 text-white"
-                required
-              />
-            </div>
-            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-            <CardFooter className="flex flex-col gap-4 mt-4">
-              <Button 
-                type="submit" 
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md"
-                disabled={isLoading}
-              >
-                {isLoading ? 'Creando cuenta...' : 'Crear cuenta'}
-              </Button>
-              <div className="text-center text-sm text-gray-400">
-                ¿Ya tienes una cuenta?{' '}
-                <Link href="/login" className="font-medium text-blue-500 hover:underline">
-                  Iniciar sesión
-                </Link>
+    <div>
+      <NavBar />
+      <div className="flex justify-center items-center min-h-screen bg-black mt-14"> {/* Añade mt-14 para espacio debajo del NavBar */}
+        <Card className="w-full max-w-md p-6 space-y-6 bg-gray-800 text-white shadow-md rounded-lg">
+          <CardHeader className="text-center">
+            <CardTitle className="text-3xl font-bold">Crear cuenta</CardTitle>
+            <CardDescription>Ingrese su información para crear una cuenta.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-2">
+                <Label htmlFor="email">Correo electrónico</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="ejemplo@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-gray-700 text-white"
+                  required
+                />
               </div>
-            </CardFooter>
-          </form>
-        </CardContent>
-      </Card>
+              <div className="space-y-2">
+                <Label htmlFor="password">Contraseña</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="********"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="bg-gray-700 text-white"
+                  required
+                />
+              </div>
+              {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+              <CardFooter className="flex flex-col gap-4 mt-4">
+                <Button 
+                  type="submit" 
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Creando cuenta...' : 'Crear cuenta'}
+                </Button>
+                <div className="text-center text-sm text-gray-400">
+                  ¿Ya tienes una cuenta?{' '}
+                  <Link href="/login" className="font-medium text-blue-500 hover:underline">
+                    Iniciar sesión
+                  </Link>
+                </div>
+              </CardFooter>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

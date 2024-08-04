@@ -123,6 +123,8 @@ button {
 button:hover {
   background-color: #45a049;
 }
+
+/* Media queries para responsividad */
 @media (max-width: 768px) {
   .container {
     padding-left: 1rem;
@@ -152,4 +154,11 @@ button:hover {
   width: auto;
   height: auto;
   margin: 0 auto;
+}
+
+/* Full width for mobile */
+@media (max-width: 768px) {
+  .sidebar-filter {
+    width: 100%;
+  }
 }

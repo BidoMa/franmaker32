@@ -11,6 +11,10 @@ interface SidebarFilterProps {
   setEstablishmentTime: (time: string) => void;
 }
 
+const defaultInvestmentRange: [number, number] = [50000, 1800000];
+const defaultRoiRange = '';
+const defaultEstablishmentTime = '';
+
 const SidebarFilter: React.FC<SidebarFilterProps> = ({
   investmentRange,
   setInvestmentRange,
@@ -19,8 +23,14 @@ const SidebarFilter: React.FC<SidebarFilterProps> = ({
   establishmentTime,
   setEstablishmentTime
 }) => {
+  const resetFilters = () => {
+    setInvestmentRange(defaultInvestmentRange);
+    setRoiRange(defaultRoiRange);
+    setEstablishmentTime(defaultEstablishmentTime);
+  };
+
   return (
-    <div className="w-64 bg-gray-800 p-4 rounded-lg">
+    <div className="bg-gray-800 p-4 rounded-lg sidebar-filter w-full md:w-64">
       <h2 className="text-xl font-bold text-white mb-4">Filtros</h2>
       
       <div className="mb-6">
@@ -80,6 +90,13 @@ const SidebarFilter: React.FC<SidebarFilterProps> = ({
           </div>
         </RadioGroup.Root>
       </div>
+
+      <button 
+        onClick={resetFilters} 
+        className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded"
+      >
+        Resetear Filtros
+      </button>
     </div>
   );
 };

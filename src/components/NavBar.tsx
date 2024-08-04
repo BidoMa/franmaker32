@@ -1,9 +1,11 @@
+"use client"; // Asegúrate de que esto esté en la primera línea
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // Importar iconos
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -11,17 +13,23 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between px-4 lg:px-6 h-14 bg-black text-white">
-      <Link href="/" className="flex items-center justify-center">
-        <MountainIcon className="h-6 w-6" />
+    <nav className="flex items-center justify-between px-4 lg:px-6 h-14 bg-black text-white fixed top-0 w-full z-50">
+      <Link href="/" className="flex items-center">
+        <img src="https://iili.io/dRDc8Mv.png" alt="Logo" className="h-16 w-auto" />
         <span className="sr-only">Franmaker</span>
       </Link>
       <div className="hidden md:flex items-center gap-4">
-        {["Características", "Precios", "Marketplace", "Acerca de", "Contacto"].map((item) => (
-          <Link key={item} href={`/${item.toLowerCase()}`} className="text-sm font-medium hover:underline underline-offset-4">
-            {item}
-          </Link>
-        ))}
+        <Link href="/" className="text-sm font-medium hover:underline underline-offset-4">
+          Precios
+        </Link>
+        <Link href="/marketplace">
+          <Button variant="outline" className="bg-black text-white px-4 py-2 rounded-md text-sm font-medium animate-glow-center">
+            Marketplace
+          </Button>
+        </Link>
+        <Link href="/test" className="text-sm font-medium hover:underline underline-offset-4">
+          Test de Franquiciabilidad
+        </Link>
       </div>
       <div className="hidden md:flex items-center gap-4">
         <Link href="/login">
@@ -29,7 +37,9 @@ const NavBar = () => {
             Iniciar Sesión
           </Button>
         </Link>
-        <Button className="px-4 py-2 rounded-md text-sm font-medium">Registrarse</Button>
+        <Link href="/login/register">
+          <Button className="px-4 py-2 rounded-md text-sm font-medium">Registrarse</Button>
+        </Link>
       </div>
       <div className="md:hidden flex items-center">
         <button onClick={handleMenuToggle} className="text-white">
@@ -38,17 +48,27 @@ const NavBar = () => {
       </div>
       {isMenuOpen && (
         <div className="absolute top-14 left-0 w-full bg-black text-white flex flex-col items-center gap-4 p-4 md:hidden">
-          {["Características", "Precios", "Marketplace", "Acerca de", "Contacto"].map((item) => (
-            <Link key={item} href={`/${item.toLowerCase()}`} className="text-sm font-medium hover:underline underline-offset-4" onClick={handleMenuToggle}>
-              {item}
-            </Link>
-          ))}
-          <Link href="/login" className="w-full">
+          <Link href="/" className="text-sm font-medium hover:underline underline-offset-4" onClick={handleMenuToggle}>
+            Precios
+          </Link>
+          <Link href="/marketplace" className="w-full" onClick={handleMenuToggle}>
+            <Button variant="outline" className="w-full bg-black text-white px-4 py-2 rounded-md text-sm font-medium animate-glow-center">
+              Marketplace
+            </Button>
+          </Link>
+          <Link href="/test" className="w-full" onClick={handleMenuToggle}>
+            <Button variant="outline" className="w-full text-sm font-medium hover:underline underline-offset-4">
+              Test de Franquiciabilidad
+            </Button>
+          </Link>
+          <Link href="/login" className="w-full" onClick={handleMenuToggle}>
             <Button variant="outline" className="w-full px-4 py-2 rounded-md text-sm font-medium">
               Iniciar Sesión
             </Button>
           </Link>
-          <Button className="w-full px-4 py-2 rounded-md text-sm font-medium">Registrarse</Button>
+          <Link href="/login/register" className="w-full" onClick={handleMenuToggle}>
+            <Button className="w-full px-4 py-2 rounded-md text-sm font-medium">Registrarse</Button>
+          </Link>
         </div>
       )}
     </nav>
@@ -56,25 +76,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-type IconProps = React.SVGProps<SVGSVGElement>;
-
-function MountainIcon(props: IconProps) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
-  );
-}
-
