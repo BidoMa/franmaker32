@@ -1,0 +1,91 @@
+Implementación de MVP - 31 dias
+
+	Analasis
+		Requerimientos
+	Diseño
+		Documento de diseño
+			Diseño de pruebas
+		Arquitectura
+	Desarrollo
+	Pruebas
+	Implementación
+	
+	
+Requerimientos
+	Arquitectura Simple
+	Rapida de desarrollar
+	Simple de usar
+		Franquiciantes (dueño de la marca)
+		Franquiciados (inversor)
+	Aplicación web
+	Modelo de OpenAI preparado para generar manuales a demanda
+	
+	
+	
+	CU-01:	registro de usuario del tipo franquiciante
+			
+	CU-02:  registro de usuario del tipo consultor		
+	
+	CU-03:	crear manuales de marca
+		CU-20 crear template de marca
+	
+		Cada vez que el usuario quiera crear un manual de marca debe pagar un fee
+		Tiene que verificar el tipo de usuario y algun flag para que si queremos que al consultor no le cueste nada, no lo cobre
+		CU-05 - crear manual de operaciones
+		CU-06 - crear documento de planificación economica financiera
+		CU-07 - crear contrato legal
+		
+	CU-20 crear template de marca
+	
+	CU-20 modificar template de marca
+		
+	CU-05 - crear manual de operaciones
+		CU-09	crear borrador
+		CU-10	modificar borrador
+		CU-11	vaciar borrador
+		CU-12	enviar borrador
+			Quedara habilitado el boton durante 48 horas desde la primera vez que se ejecute el caso de uso
+			CU-16 consumir modelo de OpenAI
+		CU-19 	descargar manual
+		
+	CU-06 - crear documento de planificación economica financiera
+		CU-09	crear borrador
+		CU-10	modificar borrador
+		CU-11	vaciar borrador
+		CU-12	enviar borrador
+			Quedara habilitado el boton durante 48 horas desde la primera vez que se ejecute el caso de uso
+			CU-16 consumir modelo de OpenAI
+		CU-19 	descargar manual
+			
+	CU-07 - crear contrato legal
+		CU-09	crear borrador de contrato legal		
+		CU-10	modificar borrador
+		CU-11	vaciar borrador
+		CU-12	enviar borrador de contrato legal
+			Quedara habilitado el boton durante 48 horas desde la primera vez que se ejecute el caso de uso
+		CU-19 	descargar manual
+		
+	CU-08:	 registro de marca
+		Formulario para cargar toda la info de la marca
+		Sumario
+		Paso de aprobación para que una vez aprobada la marca aparezca en el market place
+		
+	CU-13:	 modificación de marca
+		Formulario modificacible con la información de la marca
+		Sumario
+		Paso de aprobación para que una vez aprobada la marca aparezca en el market place
+
+	CU-14:	 eliminación de marca
+		Borrado logico
+	
+	
+	CU-15:	visualización de market place
+		Se debe poder filtrar
+	
+	CU-17: carga de templates de manuales
+	
+	CU-18: eliminación de templates de manuales
+	
+	a
+	
+a
